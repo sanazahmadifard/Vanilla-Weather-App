@@ -30,6 +30,7 @@ function displaytemperatur(response) {
   let humidityElement = document.querySelector("#humidity");
   let windspeedElement = document.querySelector("#wind-speed");
   let dateElement = document.querySelector("#date");
+
   dateElement.innerHTML = Formatdate(response.data.dt * 1000);
   windspeedElement.innerHTML = Math.round(response.data.wind.speed);
   humidityElement.innerHTML = response.data.main.humidity;
@@ -39,6 +40,7 @@ function displaytemperatur(response) {
 }
 
 let apiKey = "1ee4264117b73d2263eecd562f31ef5c";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=london&appid=${apiKey}&units=metric`;
+let city = "London";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
 axios.get(apiUrl).then(displaytemperatur);
