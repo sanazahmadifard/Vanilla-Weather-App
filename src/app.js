@@ -55,7 +55,7 @@ function handleSubmit(event) {
   let cityinputElement = document.querySelector("#city-input");
   search(cityinputElement.value);
 }
-search("London");
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
@@ -64,3 +64,4 @@ let city = "Moscow";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
 axios.get(apiUrl).then(displaytemperatur);
+search("London");
