@@ -55,3 +55,11 @@ li {
   font-size: 16px;
   top: -32px;
 }
+
+.weather-temperatur .active {
+  color: black;
+  cursor: default;
+}
+.weather-temperatur .active:hover {
+  text-decoration: none;
+}
