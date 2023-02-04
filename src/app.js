@@ -32,8 +32,8 @@ function displaytemperatur(response) {
   let windspeedElement = document.querySelector("#wind-speed");
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
-
-  temperaturElement.innerHTML = Math.round(response.data.main.temp);
+  celsiusTemperature = response.data.main.temp;
+  temperaturElement.innerHTML = Math.round(celsiusTemperature);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
@@ -56,12 +56,30 @@ function handleSubmit(event) {
   search(cityinputElement.value);
 }
 
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", handleSubmit);
-
 let apiKey = "1ee4264117b73d2263eecd562f31ef5c";
 let city = "Moscow";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
 axios.get(apiUrl).then(displaytemperatur);
+
+function displayFahrenheitTempreature(event) {
+  event.preventDefault();
+  let TempreatureElement = document.querySelector("#temperatur");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  TempreatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+function displayCelsiusTempreature(event) {
+  event.preventDefault();
+  let TempreatureElement = document.querySelector("#temperatur");
+  TempreatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+let celsiusTemperature = null;
+let fahrenheitlink = document.querySelector("#fahrenheit-link");
+fahrenheitlink.addEventListener("click", displayFahrenheitTempreature);
+
+let celsiuslink = document.querySelector("#celsius-link");
+celsiuslink.addEventListener("click", displayCelsiusTempreature);
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
 search("London");
