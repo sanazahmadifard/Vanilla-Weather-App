@@ -67,11 +67,15 @@ function displayFahrenheitTempreature(event) {
   let TempreatureElement = document.querySelector("#temperatur");
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   TempreatureElement.innerHTML = Math.round(fahrenheitTemperature);
+  celsiuslink.classList.remove("active");
+  fahrenheitlink.classList.add("active");
 }
 function displayCelsiusTempreature(event) {
   event.preventDefault();
   let TempreatureElement = document.querySelector("#temperatur");
   TempreatureElement.innerHTML = Math.round(celsiusTemperature);
+  celsiuslink.classList.add("active");
+  fahrenheitlink.classList.remove("active");
 }
 let celsiusTemperature = null;
 let fahrenheitlink = document.querySelector("#fahrenheit-link");
