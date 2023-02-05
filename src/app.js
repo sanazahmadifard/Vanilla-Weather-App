@@ -22,6 +22,29 @@ function Formatdate(timestamp) {
 
   return `${day} ${hours}:${minutes}`;
 }
+function displayforecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Sunday", "Monday", "Thusday", "Wednesday"];
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (days) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">
+                  <div class="weather-forecast-date">${days}</div>
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3mePF-LxAM8r6hDYomig6XOjV8y9qpRGy94Em2HkYKg&s"
+                    alt=""
+                    width="30"
+                  />
+                  <div class="weather-forecast-temprature">
+                    <span class="weather-forecast-temprature-max">9°</span>
+                    <span class="weather-forecast-temprature-min">4°</span>
+                  </div>
+                </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 
 function displaytemperatur(response) {
   console.log(response.data);
@@ -87,3 +110,4 @@ celsiuslink.addEventListener("click", displayCelsiusTempreature);
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 search("London");
+displayforecast();
