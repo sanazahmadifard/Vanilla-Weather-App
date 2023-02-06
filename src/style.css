@@ -1,12 +1,12 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("https://images.pexels.com/photos/2559484/pexels-photo-2559484.jpeg?auto=compress&cs=tinysrgb&w=600");
+  background-color: #cccccc;
 }
-
 h1 {
-  color: #202124;
+  color: #111113;
   display: block;
-  font-size: 24px;
-  font-weight: 100;
+  font-size: 30px;
+  font-weight: bold;
   height: 27.7778px;
   line-height: 28px;
   margin-bottom: 0;
@@ -19,7 +19,7 @@ ul {
 li {
   list-style: none;
   text-transform: capitalize;
-  color: #202124;
+  color: #17171a;
   margin: 0;
   padding: 0;
   font-size: 16px;
@@ -28,19 +28,20 @@ li {
 }
 
 .weather-app-wrapper {
-  max-width: 600px;
+  max-width: 800px;
   margin: 30px auto;
 }
 .weather-app {
   padding: 20px;
-  border: 1px solid #b9b7b7;
+  border: 1px solid rgb(148, 148, 223);
   border-radius: 10px;
+  background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
 }
 .overview {
   margin-bottom: 20px;
 }
 .weather-temperatur img {
-  margin-right: 10px;
+  margin-right: 5px;
   height: 64px;
   width: 64px;
 }
@@ -77,4 +78,15 @@ li {
 }
 .weather-forecast-temprature {
   font-size: 15px;
+}
+.btn-primary {
+  border: 1px solid rgb(148, 148, 223);
+  border-radius: 10px;
+}
+p {
+  padding-left: 50px;
+  font-family: "Dancing Script", cursive;
+}
+.name {
+  color: #f8f3f3;
 }

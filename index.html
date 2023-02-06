@@ -11,8 +11,14 @@
       crossorigin="anonymous"
     />
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&family=Chivo+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=PT+Mono&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="src/style.css" />
+
     <title>Weather App</title>
   </head>
   <body>
@@ -31,21 +37,14 @@
                   class="form-control shadow-sm"
                 />
               </div>
-              <div class="col-3">
+              <div class="col-2">
                 <input
                   type="submit"
                   value="Search"
                   class="form-control btn btn-primary shadow-sm w-100"
                 />
               </div>
-              <div class="col-3">
-                <button
-                  class="btn btn-success w-100"
-                  id="current-location-button"
-                >
-                  Current
-                </button>
-              </div>
+              <div class="col-3"></div>
             </div>
           </form>
 
@@ -54,7 +53,7 @@
             <br />
             <ul>
               <li id="date">Friday 17:51</li>
-              <li id="description"></li>
+              <br />
             </ul>
           </div>
           <div class="row">
@@ -77,6 +76,8 @@
               </ul>
             </div>
           </div>
+          <p id="description"></p>
+          <hr />
           <div class="weather-forecast" id="forecast">
             <div class="row">
               <div class="col-2">
@@ -100,7 +101,7 @@
             target="_blank"
             >Open-source code</a
           >
-          ,by Sanaz Ahmadifard
+          <span class="name">,by Sanaz Ahmadifard</span>
         </small>
       </div>
     </div>
